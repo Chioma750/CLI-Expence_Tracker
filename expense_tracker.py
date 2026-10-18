@@ -7,15 +7,17 @@ def main_menu():
 
     choice = input("Enter a choice from the listed above: ")
     return choice
+    print()
 
 def add_expense():
     description = input("Enter a description: ")
     amount = input("Enter an amount: ")
-    amount = float(input("Enter a description: "))
+    amount = float(amount)
+    print()
 
     print(description)
     print(amount)
-    
+
 def main():
     while True:
         choice = main_menu()
@@ -25,7 +27,7 @@ def main():
             break
         
         elif choice == "1":
-            pass
+            add_expense()
         elif choice == "2":
             pass
         elif choice == "3":
