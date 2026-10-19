@@ -36,6 +36,12 @@ def view_expenses():
                 f"₦{expense['amount']:.2f}"
             )
 
+def show_total():
+    total = 0
+    for expense in expenses:
+        total = total + expense["amount"]
+    print(f"Total: ₦{total:.2f}")
+
 def main():
     while True:
         choice = main_menu()
@@ -49,11 +55,10 @@ def main():
         elif choice == "2":
             view_expenses()
         elif choice == "3":
-            pass
+            show_total() 
         else:
             print("Invalid choice, choose from 1, 2, 3 and 4.")
 
 
 if __name__ == "__main__":
     main()
-
