@@ -13,9 +13,20 @@ expenses = []
 
 def add_expense():
     description = input("Enter a description: ")
-    amount = input("Enter an amount: ")
-    amount = float(amount)
 
+    if not description.strip():
+        print("Description cannot be empty")
+        return
+
+    try:
+        amount = float(input("Enter an amount: "))
+    except ValueError:
+        print("Please enter a valid number.")
+        return
+    if amount <= 0:
+        print("Amount must be greater than zero.")
+        return
+        
     expense = {
         "description": description,
         "amount": amount
