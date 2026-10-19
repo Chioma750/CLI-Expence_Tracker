@@ -7,9 +7,10 @@ def main_menu():
 
     choice = input("Enter a choice from the listed above: ")
     return choice
-    print()
+    #print()
 
 expenses = []
+
 def add_expense():
     description = input("Enter a description: ")
     amount = input("Enter an amount: ")
@@ -25,9 +26,15 @@ def add_expense():
     print(expense["description"])
     print(expense["amount"])
 
-add_expense()
-add_expense()
-print(expenses)
+def view_expenses():
+    if not expenses:
+        print("No expenses recorded yet")
+    else:
+        for number, expense in enumerate(expenses, start=1):
+            print(
+                f"{number}. {expense['description']} - "
+                f"₦{expense['amount']:.2f}"
+            )
 
 def main():
     while True:
@@ -40,7 +47,7 @@ def main():
         elif choice == "1":
             add_expense()
         elif choice == "2":
-            pass
+            view_expenses()
         elif choice == "3":
             pass
         else:
@@ -49,3 +56,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
