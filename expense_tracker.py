@@ -9,14 +9,25 @@ def main_menu():
     return choice
     print()
 
+expenses = []
 def add_expense():
     description = input("Enter a description: ")
     amount = input("Enter an amount: ")
     amount = float(amount)
+
+    expense = {
+        "description": description,
+        "amount": amount
+    }
+    expenses.append(expense)
     print()
 
-    print(description)
-    print(amount)
+    print(expense["description"])
+    print(expense["amount"])
+
+add_expense()
+add_expense()
+print(expenses)
 
 def main():
     while True:
